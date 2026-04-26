@@ -1,0 +1,247 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Мини-Сериалы</title>
+    <link rel="icon" type="image/x-icon" href="img/brand/favicon.ico" />
+    <link rel="shortcut icon" href="img/brand/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="catalog-app">
+      <header class="topbar">
+        <div class="header-shell" aria-label="Шапка сайта">
+          <a class="brand-inline" href="#" aria-label="Главная">
+            <img
+              id="brandLogo"
+              class="brand-logo brand-logo-desktop"
+              src="img/brand/tv_logo.svg"
+              alt="TV Logo"
+              width="148"
+              height="44"
+              loading="eager"
+              decoding="async"
+            />
+            <img
+              class="brand-logo brand-logo-mobile"
+              src="img/brand/tv_logo.svg"
+              alt="TV Logo"
+              width="44"
+              height="44"
+              loading="eager"
+              decoding="async"
+            />
+            <span class="brand-title">МИНИ-СЕРИАЛЫ</span>
+          </a>
+
+          <div class="search-wrap header-search-wrap">
+            <label class="search-label" for="searchInput">Поиск</label>
+            <input
+              id="searchInput"
+              type="search"
+              autocomplete="off"
+              placeholder="Введите название"
+            />
+            <ul id="suggestions" class="suggestions" role="listbox" aria-label="Search suggestions"></ul>
+          </div>
+
+          <a
+            class="join-btn"
+            href="https://t.me/+_PzFoPA1DmM1NjIy"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Вступить в Telegram"
+          >
+            <img
+              class="btn-icon"
+              src="img/icons/telegram.svg"
+              alt=""
+              width="16"
+              height="16"
+              loading="lazy"
+              decoding="async"
+            />
+            <span class="join-label">Вступить</span>
+          </a>
+
+          <div class="lang-shell desktop-lang" aria-label="Выбор языка">
+            <img
+              class="lang-icon"
+              src="img/icons/globe.svg"
+              alt=""
+              width="15"
+              height="15"
+              loading="lazy"
+              decoding="async"
+            />
+            <button
+              id="languageSelectButton"
+              class="lang-trigger"
+              type="button"
+              aria-label="Язык интерфейса"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="languageMenuDesktop"
+            >
+              Русский
+            </button>
+            <ul id="languageMenuDesktop" class="lang-menu" role="listbox" aria-label="Список языков"></ul>
+            <select id="languageSelect" class="lang-native" aria-hidden="true" tabindex="-1">
+              <option value="ru">Русский</option>
+              <option value="en">English</option>
+              <option value="ua">Українська</option>
+              <option value="kz">Қазақша</option>
+              <option value="zh">中文</option>
+              <option value="ko">한국어</option>
+              <option value="ro">Română</option>
+              <option value="de">Deutsch</option>
+              <option value="cz">Čeština</option>
+              <option value="bg">Български</option>
+            </select>
+            <img
+              class="caret-icon"
+              src="img/icons/chevron-down.svg"
+              alt=""
+              width="12"
+              height="12"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <div class="mobile-subnav" aria-label="Мобильная навигация">
+          <a class="mobile-tab is-active" href="#">Главная</a>
+          <a class="mobile-tab" href="#genresSection">Категории</a>
+
+          <div class="lang-shell mobile-lang" aria-label="Выбор языка на мобильном">
+            <img
+              class="lang-icon"
+              src="img/icons/globe.svg"
+              alt=""
+              width="15"
+              height="15"
+              loading="lazy"
+              decoding="async"
+            />
+            <button
+              id="languageSelectMobileButton"
+              class="lang-trigger"
+              type="button"
+              aria-label="Язык интерфейса (мобильный)"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="languageMenuMobile"
+            >
+              Русский
+            </button>
+            <ul id="languageMenuMobile" class="lang-menu" role="listbox" aria-label="Список языков (мобильный)"></ul>
+            <select id="languageSelectMobile" class="lang-native" aria-hidden="true" tabindex="-1">
+              <option value="ru">Русский</option>
+              <option value="en">English</option>
+              <option value="ua">Українська</option>
+              <option value="kz">Қазақша</option>
+              <option value="zh">中文</option>
+              <option value="ko">한국어</option>
+              <option value="ro">Română</option>
+              <option value="de">Deutsch</option>
+              <option value="cz">Čeština</option>
+              <option value="bg">Български</option>
+            </select>
+            <img
+              class="caret-icon"
+              src="img/icons/chevron-down.svg"
+              alt=""
+              width="12"
+              height="12"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </header>
+
+      <div class="layout-columns">
+        <aside class="sidebar-column" aria-label="Категории и сортировка">
+          <section id="genresSection" class="tags-block" aria-label="Tag filters">
+            <div class="section-head">
+              <h2>Категории</h2>
+              <button id="clearTagsBtn" class="text-btn" type="button">Сбросить</button>
+            </div>
+            <div id="tagsContainer" class="tag-list"></div>
+          </section>
+
+          <section class="controls" aria-label="Search controls">
+            <div class="control-grid">
+              <div class="control">
+                <label for="sortSelect">Сортировка</label>
+                <div class="lang-shell sort-shell" aria-label="Выбор сортировки">
+                  <button
+                    id="sortSelectButton"
+                    class="lang-trigger"
+                    type="button"
+                    aria-label="Сортировка результатов"
+                    aria-haspopup="listbox"
+                    aria-expanded="false"
+                    aria-controls="sortMenu"
+                  >
+                    По релевантности
+                  </button>
+                  <ul id="sortMenu" class="lang-menu" role="listbox" aria-label="Список сортировки"></ul>
+                  <select id="sortSelect" class="lang-native" aria-hidden="true" tabindex="-1">
+                    <option value="relevance">По релевантности</option>
+                    <option value="title_asc">По названию (A-Z)</option>
+                    <option value="title_desc">По названию (Z-A)</option>
+                    <option value="year_desc">Сначала новые</option>
+                    <option value="year_asc">Сначала старые</option>
+                  </select>
+                  <img
+                    class="caret-icon"
+                    src="img/icons/chevron-down.svg"
+                    alt=""
+                    width="12"
+                    height="12"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        </aside>
+
+        <div class="main-column">
+          <section class="history-block" aria-label="Search history">
+            <div class="section-head">
+              <h2>История</h2>
+              <button id="clearHistoryBtn" class="text-btn" type="button">Очистить</button>
+            </div>
+            <div id="historyContainer" class="history-list"></div>
+          </section>
+
+          <section class="results-block" aria-live="polite">
+            <div class="section-head">
+              <h2 id="resultsTitle">Результаты</h2>
+              <p id="resultsMeta" class="meta"></p>
+            </div>
+            <div id="resultsGrid" class="results-grid"></div>
+            <div class="results-actions">
+              <button id="loadMoreBtn" class="load-more-btn" type="button" hidden>Показать еще</button>
+            </div>
+            <div id="resultsSentinel" class="results-sentinel" aria-hidden="true"></div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+    <script src="search.js" defer></script>
+  </body>
+</html>
